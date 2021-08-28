@@ -1,12 +1,23 @@
 import React from "react";
 import NavBar from "./NavBar";
 
+const descriptionStyle = {
+    color: "#BC027F",
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 0,
+    lineHeight: 1.25,
+};
+
 const Layout = ({ children }) => {
     return (
         <div className="layout">
             <NavBar />
+            <hr />
             <div className="content">{children}</div>
             <footer>
+                <hr />
+                <h3 style={descriptionStyle}>Start of Footer</h3>
                 <a>Privacy Policy</a>
                 <span> | </span>
                 <p>Follow Us</p>
