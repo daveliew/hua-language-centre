@@ -10,14 +10,6 @@ module.exports = {
                 url: "https://hua.com.sg/graphql",
             },
         },
-        {
-            resolve: `gatsby-plugin-material-ui`,
-            options: {
-                stylesProvider: {
-                    injectFirst: true,
-                },
-            },
-        },
         "gatsby-plugin-styled-components",
         "gatsby-plugin-gatsby-cloud",
         "gatsby-plugin-image",
