@@ -1,6 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar";
 
+const pageStyles = {
+    padding: "0.5rem",
+    fontFamily: "Poppins, -apple-system, Roboto, sans-serif, serif",
+};
 const descriptionStyle = {
     color: "#BC027F",
     fontSize: 20,
@@ -11,7 +15,7 @@ const descriptionStyle = {
 
 const Layout = ({ children }) => {
     return (
-        <div className="layout">
+        <div style={pageStyles}>
             <NavBar />
             <hr />
             <div className="content">{children}</div>

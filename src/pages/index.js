@@ -1,5 +1,6 @@
 import * as React from "react";
-import Layout from "../Components/Layout";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
 
 // styles
 const pageStyles = {
@@ -79,55 +80,8 @@ const badgeStyle = {
     lineHeight: 1,
 };
 
-// data
-const links = [
-    {
-        text: "Tutorial",
-        url: "https://www.gatsbyjs.com/docs/tutorial/",
-        description:
-            "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-        color: "#E95800",
-    },
-    {
-        text: "How to Guides",
-        url: "https://www.gatsbyjs.com/docs/how-to/",
-        description:
-            "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-        color: "#1099A8",
-    },
-    {
-        text: "Reference Guides",
-        url: "https://www.gatsbyjs.com/docs/reference/",
-        description:
-            "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-        color: "#BC027F",
-    },
-    {
-        text: "Conceptual Guides",
-        url: "https://www.gatsbyjs.com/docs/conceptual/",
-        description:
-            "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-        color: "#0D96F2",
-    },
-    {
-        text: "Plugin Library",
-        url: "https://www.gatsbyjs.com/plugins",
-        description:
-            "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-        color: "#8EB814",
-    },
-    {
-        text: "Build and Host",
-        url: "https://www.gatsbyjs.com/cloud",
-        badge: true,
-        description:
-            "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-        color: "#663399",
-    },
-];
-
 // markup
-const IndexPage = () => {
+export default function IndexPage({ data }) {
     return (
         <Layout>
             <main style={pageStyles}>
@@ -143,6 +97,18 @@ const IndexPage = () => {
                             🎉🎉🎉
                         </span>
                     </h1>
+                    <h4>Posts</h4>
+                    {data.allWpPost.edges.map((node) => (
+                        <div>
+                            <p>{node.title}</p>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: node.content,
+                                }}
+                            />
+                        </div>
+                    ))}
+                    {/* highlight-end */}
                 </section>
                 <section>
                     <h1 style={headingStyles}>
@@ -150,7 +116,7 @@ const IndexPage = () => {
                         <br />
                         <span style={headingAccentStyles}>Grid</span>
                     </h1>
-                    <p>Grid goes here</p>
+                    <p>Write some stuff</p>
                 </section>
                 <section>
                     <h1 style={headingStyles}>Why Hua</h1>
@@ -159,6 +125,17 @@ const IndexPage = () => {
             </main>
         </Layout>
     );
-};
+}
 
-export default IndexPage;
+export const pageQuery = graphql`
+    query {
+        allWpPost(filter: { date: { gte: "2021" } }) {
+            edges {
+                node {
+                    id
+                    content
+                }
+            }
+        }
+    }
+`;
