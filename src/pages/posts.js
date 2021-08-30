@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../Components/Layout";
+import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 
-const posts = ({ data }) => {
+const posts = ({ pageQuery }) => {
     return (
         <Layout>
             <title>Posts</title>
             <div>Hello From Posts</div>
-            {data.allWpPost.nodes.map((node) => {
+            {pageQuery?.allWpPost?.nodes?.map((node) => {
                 <div>
                     <p>{node.title}</p>
-                    <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                    <div dangerouslySetInnerHTML={{ __html: node.content }} />
                 </div>;
             })}
         </Layout>
@@ -21,11 +21,13 @@ export default posts;
 
 export const pageQuery = graphql`
     query {
-        allWpPost(sort: { fields: [date] }) {
+        allWpPost {
             nodes {
+                id
                 title
+                date
                 excerpt
-                slug
+                content
             }
         }
     }

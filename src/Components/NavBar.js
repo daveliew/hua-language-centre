@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import * as React from "react";
+import React from "react";
 
 // styles
 const sectionStyle = {
@@ -42,6 +42,11 @@ const linkStyle = {
 };
 // data
 const links = [
+    {
+        text: "HOME",
+        url: "/",
+        description: "",
+    },
     {
         text: "ABOUT",
         url: "/about",
