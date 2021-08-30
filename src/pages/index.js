@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 // styles
 const pageStyles = {
     color: "#232129",
-    padding: 96,
+    padding: "0.5rem",
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
@@ -20,7 +20,7 @@ const headingAccentStyles = {
 // markup
 export default function IndexPage({ data }) {
     return (
-        <Layout>
+        <Layout pageTitle="Home">
             <main style={pageStyles}>
                 <title>Home Page</title>
                 <section>

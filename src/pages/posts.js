@@ -4,9 +4,8 @@ import { graphql } from "gatsby";
 
 const posts = ({ pageQuery }) => {
     return (
-        <Layout>
-            <title>Posts</title>
-            <div>Hello From Posts</div>
+        <Layout pageTitle="Posts">
+            <h1>Hello From Posts</h1>
             {pageQuery?.allWpPost?.nodes?.map((node) => {
                 <div>
                     <p>{node.title}</p>
