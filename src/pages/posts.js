@@ -2,16 +2,20 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 
-const posts = ({ pageQuery }) => {
+const posts = ({ data }) => {
     return (
         <Layout pageTitle="Posts">
             <h1>Hello From Posts</h1>
-            {pageQuery?.allWpPost?.nodes?.map((node) => {
+            {data.allWpPost.nodes.map((node) => (
                 <div>
                     <p>{node.title}</p>
-                    <div dangerouslySetInnerHTML={{ __html: node.content }} />
-                </div>;
-            })}
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: node.content,
+                        }}
+                    />
+                </div>
+            ))}
         </Layout>
     );
 };
@@ -19,13 +23,10 @@ const posts = ({ pageQuery }) => {
 export default posts;
 
 export const pageQuery = graphql`
-    query {
-        allWpPost {
+    query LatestPosts {
+        allWpPost(filter: { date: { gte: "2021" } }) {
             nodes {
                 id
-                title
-                date
-                excerpt
                 content
             }
         }

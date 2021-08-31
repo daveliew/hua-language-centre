@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
+import Card from "../components/Card";
 
 // styles
 const pageStyles = {
@@ -17,13 +18,25 @@ const headingAccentStyles = {
     color: "#663399",
 };
 
+const heroStyles = {
+    height: "60vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+};
+
+const sectionStyles = {
+    ...heroStyles,
+    height: "30vh",
+};
+
 // markup
 export default function IndexPage({ data }) {
     return (
         <Layout pageTitle="Home">
             <main style={pageStyles}>
                 <title>Home Page</title>
-                <section>
+                <section style={heroStyles}>
                     <h1 style={headingStyles}>
                         Call to Action
                         <br />
@@ -34,30 +47,24 @@ export default function IndexPage({ data }) {
                             🎉🎉🎉
                         </span>
                     </h1>
-                    <h4>Posts</h4>
-                    {data.allWpPost.edges.map((node) => (
-                        <div>
-                            <p>{node.title}</p>
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: node.content,
-                                }}
-                            />
-                        </div>
-                    ))}
-                    {/* highlight-end */}
                 </section>
-                <section>
+                <hr />
+                <section style={sectionStyles}>
                     <h1 style={headingStyles}>
                         Products
                         <br />
                         <span style={headingAccentStyles}>Grid</span>
                     </h1>
-                    <p>Write some stuff</p>
                 </section>
-                <section>
+                <hr />
+                <section style={sectionStyles}>
                     <h1 style={headingStyles}>Why Hua</h1>
-                    <p>Grid goes here</p>
+                    <Card
+                        author="test"
+                        title={data.allWpPost.nodes[0].id}
+                        // date={recipeItem.date}
+                        // description={recipeItem.description}
+                    />
                 </section>
             </main>
         </Layout>
@@ -67,11 +74,10 @@ export default function IndexPage({ data }) {
 export const pageQuery = graphql`
     query {
         allWpPost(filter: { date: { gte: "2021" } }) {
-            edges {
-                node {
-                    id
-                    content
-                }
+            nodes {
+                id
+                excerpt
+                date
             }
         }
     }
