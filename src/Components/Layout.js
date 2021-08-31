@@ -20,6 +20,7 @@ const Layout = ({ pageTitle, children }) => {
             <title>{pageTitle}</title>
             <hr />
             <div className="contentStyles">{children}</div>
+            <hr />
             <Footer />
         </div>
     );

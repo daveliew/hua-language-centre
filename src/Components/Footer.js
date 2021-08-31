@@ -1,6 +1,20 @@
 import React from "react";
 
-const descriptionStyle = {
+const sectionStyles = {
+    display: "flex",
+    flexDirection: "column",
+    padding: "1rem",
+    marginTop: "1rem",
+};
+
+const containerStyles = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginBottom: "1rem",
+};
+
+const descriptionStyles = {
     color: "#BC027F",
     fontSize: 20,
     marginTop: 10,
@@ -10,15 +24,18 @@ const descriptionStyle = {
 
 const Footer = () => {
     return (
-        <footer>
-            <hr />
-            <h3 style={descriptionStyle}>Start of Footer</h3>
-            <a>Privacy Policy</a>
-            <span> | </span>
-            <p>Follow Us</p>
-            <a href="https://www.facebook.com/hualanguage/">
-                <img src="../../public/icons/icon-144x144.png" alt="fb logo" />
-            </a>
+        <footer style={sectionStyles}>
+            <container style={containerStyles}>
+                <a>Privacy Policy</a>
+                <span> | </span>
+                <p>Follow Us</p>
+                <a href="https://www.facebook.com/hualanguage/">
+                    <img
+                        src="../../public/icons/icon-144x144.png"
+                        alt="fb logo"
+                    />
+                </a>
+            </container>
             <p>Copyright 2021 Hua Language Centre</p>
         </footer>
     );
