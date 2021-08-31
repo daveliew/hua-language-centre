@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
+import styles from "../styles/home.module.css";
 
 const posts = ({ data }) => {
     return (
         <Layout pageTitle="Posts">
-            <h1>Hello From Posts</h1>
+            <h1 className={styles.header}>Hello From Posts</h1>
             {data.allWpPost.nodes.map((node) => (
                 <div>
                     <p>{node.title}</p>

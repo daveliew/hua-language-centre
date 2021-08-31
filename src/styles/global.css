@@ -2,9 +2,9 @@
 
 * {
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1em;
     text-decoration: none;
-    font-family: "Poppins, sans-serif";
+    font-family: "Poppins", sans-serif;
     color: #fef6f0;
 }
 
@@ -14,6 +14,6 @@ body {
 }
 
 body {
-    background: radial-gradient(at top left, #fef6f0 0%, #f89773 100%);
+    background: radial-gradient(at top left, #f89773 0%, #ae6552 100%);
     background-repeat: no-repeat;
 }

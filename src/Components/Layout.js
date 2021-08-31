@@ -1,10 +1,12 @@
 import React from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import "../styles/global.css";
 
-const pageStyles = {
+const layoutStyles = {
     padding: "0.5rem",
-    fontFamily: "Poppins, -apple-system, Roboto, sans-serif, serif",
+    margin: "0 auto",
+    maxWidth: "100vw",
 };
 
 const contentStyles = {
@@ -13,7 +15,7 @@ const contentStyles = {
 
 const Layout = ({ pageTitle, children }) => {
     return (
-        <div style={pageStyles}>
+        <div style={layoutStyles}>
             <NavBar />
             <title>{pageTitle}</title>
             <hr />

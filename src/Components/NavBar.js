@@ -6,7 +6,7 @@ const sectionStyle = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     backgroundColor: "#414042",
 };
 const titleStyle = {
@@ -23,22 +23,23 @@ const headingAccentStyles = {
 
 const linkContainerStyle = {
     display: "flex",
-    width: "70%",
+    width: "70vw",
     flexDirection: "horizontal",
-    justifyContent: "space-around",
-    backgroundColor: "#fef6f0",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    marginTop: "1rem",
 };
-const docLinkStyle = {
-    ...linkStyle,
-    listStyleType: "none",
-    marginBottom: 24,
-};
+
 const linkStyle = {
     color: "#f89773",
-    textDecoration: "none",
-    fontWeight: "bold",
-    fontSize: 16,
-    verticalAlign: "5%",
+    fontWeight: "700",
+    display: "flex",
+    marginTop: "1rem",
+    marginBottom: "1rem",
+};
+
+const hoverStyle = {
+    borderColor: "#fef6f0",
 };
 // data
 const links = [
@@ -64,18 +65,18 @@ const links = [
         description: "Write copy",
     },
     {
-        text: "Schedule",
+        text: "SCHEDULE",
         url: "https://hua.com.sg/class-schedule/",
         description: "Link to API fetch",
     },
     {
-        text: "Locations",
+        text: "LOCATIONS",
         url: "https://www.google.com/maps/dir/1.3256577,103.8116813/101+Thomson+Rd,+Hua+Language+Centre+(United+Square),+307591/@1.3235171,103.810198,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x31da19e8096a04b3:0x4202a8553eb29c4!2m2!1d103.8432704!2d1.317304",
         description:
             "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
     },
     {
-        text: "Contact",
+        text: "CONTACT",
         url: "https://hua.com.sg/contact/",
         description: "link to adaptive",
     },
@@ -90,8 +91,12 @@ const NavBar = () => {
             </div>
             <div style={linkContainerStyle}>
                 {links.map((link) => (
-                    <span style={docLinkStyle}>
-                        <Link style={linkStyle} href={`${link.url}`}>
+                    <span>
+                        <Link
+                            style={linkStyle}
+                            href={`${link.url}`}
+                            onMouseEnter={hoverStyle}
+                        >
                             {link.text}
                         </Link>
                     </span>
