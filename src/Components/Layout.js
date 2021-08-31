@@ -7,19 +7,32 @@ const layoutStyles = {
     padding: "0.5rem",
     margin: "0 auto",
     maxWidth: "100vw",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
 };
 
 const contentStyles = {
-    height: "70vh",
+    minHeight: "50vh",
+    padding: "1rem",
+    margin: "0 auto",
+    marginTop: "1rem",
+    display: "flex",
+    flexDirection: "column",
+};
+
+const navStyles = {
+    position: "sticky",
+    top: 0,
 };
 
 const Layout = ({ pageTitle, children }) => {
     return (
         <div style={layoutStyles}>
-            <NavBar />
+            <NavBar style={navStyles} />
             <title>{pageTitle}</title>
             <hr />
-            <div className="contentStyles">{children}</div>
+            <div style={contentStyles}>{children}</div>
             <hr />
             <Footer />
         </div>

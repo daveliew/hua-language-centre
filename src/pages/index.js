@@ -6,8 +6,7 @@ import Card from "../components/Card";
 // styles
 const pageStyles = {
     color: "#232129",
-    padding: "0.5rem",
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    // padding: "0.5rem",
 };
 const headingStyles = {
     marginTop: 0,

@@ -1,11 +1,29 @@
 import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faFacebookSquare,
+    faInstagramSquare,
+} from "@fortawesome/free-brands-svg-icons";
 
 const sectionStyles = {
     display: "flex",
+    minWidth: "30vw",
     flexDirection: "column",
+    justifyContent: "center",
     padding: "1rem",
-    marginTop: "1rem",
 };
+
+const Container = styled.div`
+    margin: 1rem;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+    display: inline-grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 0.5rem;
+`;
 
 const containerStyles = {
     display: "flex",
@@ -15,8 +33,8 @@ const containerStyles = {
 };
 
 const descriptionStyles = {
-    color: "#BC027F",
-    fontSize: 20,
+    color: "#414042",
+    fontSize: "0.8rem",
     marginTop: 10,
     marginBottom: 0,
     lineHeight: 1.25,
@@ -25,18 +43,22 @@ const descriptionStyles = {
 const Footer = () => {
     return (
         <footer style={sectionStyles}>
-            <container style={containerStyles}>
-                <a>Privacy Policy</a>
+            <div>
+                <a href="https://hua.com.sg/privacy-policy/">Privacy Policy</a>
                 <span> | </span>
-                <p>Follow Us</p>
-                <a href="https://www.facebook.com/hualanguage/">
-                    <img
-                        src="../../public/icons/icon-144x144.png"
-                        alt="fb logo"
-                    />
-                </a>
-            </container>
-            <p>Copyright 2021 Hua Language Centre</p>
+                <Container>
+                    Follow Us
+                    <a href="https://www.facebook.com/hualanguage/">
+                        <FontAwesomeIcon icon={faFacebookSquare} />
+                    </a>
+                    <a href="https://www.instagram.com/hualanguage/">
+                        <FontAwesomeIcon icon={faInstagramSquare} />
+                    </a>
+                </Container>
+            </div>
+            <p style={descriptionStyles}>
+                Copyright {new Date().getFullYear()} Hua Language Centre
+            </p>
         </footer>
     );
 };

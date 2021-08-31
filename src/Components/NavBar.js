@@ -39,7 +39,7 @@ const linkStyle = {
 };
 
 const hoverStyle = {
-    borderColor: "#fef6f0",
+    border: "1px solid #fef6f0",
 };
 // data
 const links = [
@@ -56,7 +56,7 @@ const links = [
     },
     {
         text: "NEWS",
-        url: "/posts",
+        url: "/news",
         description: "use gQL to create fetch",
     },
     {
@@ -92,11 +92,7 @@ const NavBar = () => {
             <div style={linkContainerStyle}>
                 {links.map((link) => (
                     <span>
-                        <Link
-                            style={linkStyle}
-                            href={`${link.url}`}
-                            onMouseEnter={hoverStyle}
-                        >
+                        <Link style={linkStyle} to={`${link.url}`}>
                             {link.text}
                         </Link>
                     </span>

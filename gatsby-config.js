@@ -11,6 +11,7 @@ module.exports = {
             },
         },
         "gatsby-plugin-styled-components",
+        "gatsby-plugin-fontawesome-css",
         "gatsby-plugin-gatsby-cloud",
         "gatsby-plugin-image",
         {
@@ -27,6 +28,7 @@ module.exports = {
                 icon: "src/images/icon.png",
             },
         },
+        "gatsby-plugin-material-ui",
         "gatsby-plugin-mdx",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
