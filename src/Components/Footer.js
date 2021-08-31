@@ -19,10 +19,11 @@ const sectionStyles = {
 const Container = styled.div`
     margin: 1rem;
     display: inline-grid;
-    grid-template-columns: 2fr 3fr;
-    border: 1px solid black;
+    grid-template-columns: repeat(5, auto);
     width: 30vw;
 `;
+
+//! to style
 
 const containerStyles = {
     display: "flex",

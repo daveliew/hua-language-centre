@@ -8,22 +8,12 @@ const sectionStyle = {
     position: "sticky",
     top: 0,
     width: "100vw",
+    padding: "0.5rem",
     // flexDirection: "column",
     alignItems: "center",
     justifyContent: "stretch",
     backgroundColor: "#414042",
     zIndex: 100,
-};
-const titleStyle = {
-    color: "#2da64e",
-    marginTop: 0,
-    marginBottom: 64,
-    maxWidth: 320,
-    fontSize: "1.5rem",
-    fontWeight: "700",
-};
-const headingAccentStyles = {
-    color: "#2da64e",
 };
 
 const linkContainerStyle = {

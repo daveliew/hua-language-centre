@@ -1,9 +1,6 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
-import Card from "../components/Card";
 import CustomizedAccordions from "../components/Accordion";
 import herobanner from "../images/herobanner.jpeg";
 
@@ -19,18 +16,23 @@ const headingAccentStyles = {
 };
 
 const sectionStyles = {
-    // ...heroStyles,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "30vh",
+    padding: "5rem 10rem",
+};
+
+const heroStyles = {
     minHeight: "30vh",
     height: "60vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-};
-
-const heroStyles = {
-    ...sectionStyles,
     backgroundImage: `url(${herobanner})`,
     backgroundRepeat: "no-repeat",
+    backgroundSize: "auto",
 };
 
 const heroHeadingStyles = {
@@ -70,12 +72,6 @@ export default function IndexPage({ data }) {
                 <hr />
                 <section style={sectionStyles}>
                     <h1 style={headingStyles}>Why Hua</h1>
-                    <Card
-                        author="test"
-                        title={data.allWpPost.nodes[0].id}
-                        // date={recipeItem.date}
-                        // description={recipeItem.description}
-                    />
                 </section>
             </main>
         </Layout>

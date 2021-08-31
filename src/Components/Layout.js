@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import "../styles/global.css";
 
 const layoutStyles = {
-    padding: "0.5rem",
     margin: "0 auto",
     maxWidth: "100vw",
     minHeight: "100vh",
@@ -14,11 +13,9 @@ const layoutStyles = {
 
 const contentStyles = {
     minHeight: "50vh",
-    padding: "1rem",
-    margin: "0 auto",
-    marginTop: "1rem",
     display: "flex",
     flexDirection: "column",
+    // padding: "5rem",
 };
 
 const navStyles = {
