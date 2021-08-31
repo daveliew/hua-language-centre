@@ -11,8 +11,8 @@ const pageStyle = {
 };
 
 const titleStyle = {
-    marginTop: "5rem",
-    marginBottom: "5rem",
+    marginTop: "3rem",
+    marginBottom: "3rem",
 };
 
 const containerStyles = {
@@ -20,14 +20,22 @@ const containerStyles = {
     backgroundColor: "#414042",
 };
 
+const cardStyles = {
+    boxShadow: "2px 2px",
+    margin: "2rem",
+    padding: "1rem",
+    minHeight: "30vh",
+    border: "10px solid #2da64e",
+};
+
 const posts = ({ data }) => {
     return (
         <Layout pageTitle="Posts" style={pageStyle}>
-            <h1 style={titleStyle}>Hello From News Posts (2021 only)</h1>
+            <h1 style={titleStyle}>Hello From News Posts</h1>
             <container style={containerStyles}>
                 <div className={header}>
                     {data.allWpPost.nodes.map((node) => (
-                        <div>
+                        <div style={cardStyles}>
                             <p>{node.title}</p>
                             <div
                                 dangerouslySetInnerHTML={{

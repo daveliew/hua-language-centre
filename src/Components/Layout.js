@@ -29,7 +29,6 @@ const Layout = ({ pageTitle, children }) => {
             <NavBar style={navStyles} />
             <title>{pageTitle}</title>
             <div style={contentStyles}>{children}</div>
-            <hr />
             <Footer />
         </div>
     );
