@@ -72,18 +72,9 @@ export default function CustomizedAccordions() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        From 18 months to 3 years old, a child relies on his/her
-                        right brain to learn as left brain functions are not as
-                        developed at this age. Hence, sensory stimulation is a
-                        great way for children to learn and build neural
-                        connectivity. Our programme optimises language
-                        acquisition during this golden age through activities
-                        that stimulate your child’s senses and brain
-                        development. The activities we have planned for your
-                        child appeals to their curiosity, arouses their senses,
-                        encourages creativity, improves their dexterity and
-                        helps him/her build a sense for the Chinese language and
-                        how it is structured.
+                        Our programme optimises language acquisition during this
+                        golden age through activities that stimulate your
+                        child’s senses and brain development.
                     </Typography>
                 </AccordionDetails>
             </Accordion>

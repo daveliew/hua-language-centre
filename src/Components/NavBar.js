@@ -1,13 +1,18 @@
-import { Link } from "gatsby";
 import React from "react";
+import { Link } from "gatsby";
+import Logo from "../images/logo.png";
 
 // styles
 const sectionStyle = {
     display: "flex",
-    flexDirection: "column",
+    position: "sticky",
+    top: 0,
+    width: "100vw",
+    // flexDirection: "column",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "stretch",
     backgroundColor: "#414042",
+    zIndex: 100,
 };
 const titleStyle = {
     color: "#2da64e",
@@ -31,16 +36,17 @@ const linkContainerStyle = {
 };
 
 const linkStyle = {
-    color: "#f89773",
+    color: "#fef6f0",
     fontWeight: "700",
     display: "flex",
     marginTop: "1rem",
     marginBottom: "1rem",
 };
 
-const hoverStyle = {
-    border: "1px solid #fef6f0",
+const logoStyles = {
+    height: "10vh",
 };
+
 // data
 const links = [
     {
@@ -85,10 +91,7 @@ const links = [
 const NavBar = () => {
     return (
         <nav style={sectionStyle}>
-            <div>
-                <span style={titleStyle}>huá</span>
-                <h1 style={headingAccentStyles}>Language Centre</h1>
-            </div>
+            <img src={Logo} alt="Hua Language Centre" style={logoStyles} />
             <div style={linkContainerStyle}>
                 {links.map((link) => (
                     <span>

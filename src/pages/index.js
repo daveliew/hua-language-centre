@@ -1,8 +1,11 @@
 import React from "react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Card from "../components/Card";
 import CustomizedAccordions from "../components/Accordion";
+import herobanner from "../images/herobanner.jpeg";
 
 // styles
 
@@ -15,16 +18,31 @@ const headingAccentStyles = {
     color: "#414042",
 };
 
-const heroStyles = {
+const sectionStyles = {
+    // ...heroStyles,
+    minHeight: "30vh",
     height: "60vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
 };
 
-const sectionStyles = {
-    ...heroStyles,
-    minHeight: "30vh",
+const heroStyles = {
+    ...sectionStyles,
+    backgroundImage: `url(${herobanner})`,
+    backgroundRepeat: "no-repeat",
+};
+
+const heroHeadingStyles = {
+    marginTop: "40vh",
+    marginBottom: "2rem",
+    fontSize: "3rem",
+    // backgroundColor: "#f0ede9",
+    // opacity: "0.9",
+};
+
+const heroHeadingAccentStyles = {
+    color: "#f89773",
 };
 
 // markup
@@ -34,14 +52,11 @@ export default function IndexPage({ data }) {
             <main>
                 <title>Home Page</title>
                 <section style={heroStyles}>
-                    <h1 style={headingStyles}>
-                        Call to Action
+                    <h1 style={heroHeadingStyles}>
+                        Learn Chinese
                         <br />
-                        <span style={headingAccentStyles}>
-                            — Our Value Props
-                        </span>
-                        <span role="img" aria-label="Party popper emojis">
-                            🎉🎉🎉
+                        <span style={heroHeadingAccentStyles}>
+                            the Fun and Effective Way!
                         </span>
                     </h1>
                 </section>

@@ -31,7 +31,6 @@ const Layout = ({ pageTitle, children }) => {
         <div style={layoutStyles}>
             <NavBar style={navStyles} />
             <title>{pageTitle}</title>
-            <hr />
             <div style={contentStyles}>{children}</div>
             <hr />
             <Footer />
