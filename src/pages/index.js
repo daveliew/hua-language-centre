@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import CustomizedAccordions from "../components/Accordion";
 import herobanner from "../images/herobanner.jpeg";
+import MediaCard from "../components/Card";
 
 // styles
 
@@ -17,7 +18,7 @@ const headingAccentStyles = {
 
 const sectionStyles = {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     minHeight: "30vh",
@@ -72,6 +73,7 @@ export default function IndexPage({ data }) {
                 <hr />
                 <section style={sectionStyles}>
                     <h1 style={headingStyles}>Why Hua</h1>
+                    <MediaCard />
                 </section>
             </main>
         </Layout>

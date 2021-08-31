@@ -12,7 +12,8 @@ const sectionStyle = {
     // flexDirection: "column",
     alignItems: "center",
     justifyContent: "stretch",
-    backgroundColor: "#414042",
+    // backgroundImage: `url(${Logo})`,
+    backgroundColor: "#fbac4c",
     zIndex: 100,
 };
 

@@ -37,11 +37,11 @@ const posts = ({ data }) => {
                     {data.allWpPost.nodes.map((node) => (
                         <div style={cardStyles}>
                             <p>{node.title}</p>
-                            <div
+                            {/* <div
                                 dangerouslySetInnerHTML={{
-                                    __html: node.excerpt,
+                                    __html: node.content,
                                 }}
-                            />
+                            /> */}
                         </div>
                     ))}
                 </div>
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
                 id
                 content
                 excerpt
+                title
             }
         }
     }
