@@ -81,7 +81,9 @@ const links = [
 const NavBar = () => {
     return (
         <nav style={sectionStyle}>
-            <img src={Logo} alt="Hua Language Centre" style={logoStyles} />
+            <a href="/">
+                <img src={Logo} alt="Hua Language Centre" style={logoStyles} />
+            </a>
             <div style={linkContainerStyle}>
                 {links.map((link) => (
                     <span>
