@@ -6,9 +6,11 @@ import {
     faInstagramSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+
 const sectionStyles = {
     display: "flex",
-    minWidth: "30vw",
+    // minWidth: "30vw",
     flexDirection: "column",
     justifyContent: "center",
     padding: "1rem",
@@ -16,13 +18,10 @@ const sectionStyles = {
 
 const Container = styled.div`
     margin: 1rem;
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    align-items: flex-end;
     display: inline-grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 0.5rem;
+    grid-template-columns: 2fr 3fr;
+    border: 1px solid black;
+    width: 30vw;
 `;
 
 const containerStyles = {
@@ -44,15 +43,16 @@ const Footer = () => {
     return (
         <footer style={sectionStyles}>
             <div>
-                <a href="https://hua.com.sg/privacy-policy/">Privacy Policy</a>
-                <span> | </span>
                 <Container>
+                    <a href="https://hua.com.sg/privacy-policy/">
+                        Privacy Policy |
+                    </a>
                     Follow Us
                     <a href="https://www.facebook.com/hualanguage/">
-                        <FontAwesomeIcon icon={faFacebookSquare} />
+                        <FaFacebookSquare size={25} />
                     </a>
                     <a href="https://www.instagram.com/hualanguage/">
-                        <FontAwesomeIcon icon={faInstagramSquare} />
+                        <FaInstagramSquare size={25} />
                     </a>
                 </Container>
             </div>

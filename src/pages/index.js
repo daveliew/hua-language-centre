@@ -2,19 +2,17 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Card from "../components/Card";
+import CustomizedAccordions from "../components/Accordion";
 
 // styles
-const pageStyles = {
-    color: "#232129",
-    // padding: "0.5rem",
-};
+
 const headingStyles = {
     marginTop: 0,
     marginBottom: 64,
     maxWidth: 320,
 };
 const headingAccentStyles = {
-    color: "#663399",
+    color: "#414042",
 };
 
 const heroStyles = {
@@ -26,14 +24,14 @@ const heroStyles = {
 
 const sectionStyles = {
     ...heroStyles,
-    height: "30vh",
+    minHeight: "30vh",
 };
 
 // markup
 export default function IndexPage({ data }) {
     return (
         <Layout pageTitle="Home">
-            <main style={pageStyles}>
+            <main>
                 <title>Home Page</title>
                 <section style={heroStyles}>
                     <h1 style={headingStyles}>
@@ -50,10 +48,9 @@ export default function IndexPage({ data }) {
                 <hr />
                 <section style={sectionStyles}>
                     <h1 style={headingStyles}>
-                        Products
-                        <br />
-                        <span style={headingAccentStyles}>Grid</span>
+                        <span style={headingAccentStyles}>Programmes</span>
                     </h1>
+                    <CustomizedAccordions />
                 </section>
                 <hr />
                 <section style={sectionStyles}>
